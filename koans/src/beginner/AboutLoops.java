@@ -72,7 +72,7 @@ public class AboutLoops {
             }
             s += " - ";
         }
-        assertEquals(s, "(0, 0) (0, 1) (0, 2)  - (1, 0) (1, 1) (1, 2)  - (2, 0) (2, 1) (2, 2) - ");
+        assertEquals(s, "(0, 0) (0, 1) (0, 2)  - (1, 0) (1, 1) (1, 2)  - (2, 0) (2, 1) (2, 2)  - ");
     }
 
     @Koan
@@ -82,7 +82,7 @@ public class AboutLoops {
         for (int j : is) {
             s += j + " ";
         }
-        assertEquals(s, __);
+        assertEquals(s, "1 2 3 4 ");
     }
 
     @Koan
@@ -91,7 +91,7 @@ public class AboutLoops {
         while (result < 3) {
             result++;
         }
-        assertEquals(result, __);
+        assertEquals(result, 3);
     }
 
     @Koan
@@ -100,7 +100,7 @@ public class AboutLoops {
         do {
             result++;
         } while (false);
-        assertEquals(result, __);
+        assertEquals(result, 1);
     }
 
     @Koan
@@ -113,7 +113,7 @@ public class AboutLoops {
             }
             count++;
         }
-        assertEquals(count, __);
+        assertEquals(count, 1);
     }
 
     @Koan
@@ -127,7 +127,7 @@ public class AboutLoops {
                 count++;
             }
         }
-        assertEquals(count, __);
+        assertEquals(count, 2);
     }
 
     @Koan
@@ -144,8 +144,11 @@ public class AboutLoops {
             count += 10;
         }
         // What does continue with a label mean?
-        // What gets executed? Where does the program flow continue?
-        assertEquals(count, __);
+      /* What gets executed? Where does the program flow continue? 
+      El for interno se ejecuta hasta que ja sea mayo que 2 (3 veces),
+      AL tener continue con la etiqueta 'outerLabel' el for interno se deja de ejecutar por cada iteración que hace el for exterior (5 veces) haciendo que 'count' llegue hasta 8.
+      */
+        assertEquals(count, 8);
     }
 
     @Koan
@@ -163,6 +166,6 @@ public class AboutLoops {
         }
         // What does break with a label mean?
         // What gets executed? Where does the program flow continue?
-        assertEquals(count, __);
+        assertEquals(count, 3);
     }
 }
